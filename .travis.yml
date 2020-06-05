@@ -11,3 +11,6 @@ install:
 script:
   - docker container run --rm probot-hello npm run test
   - docker container run --rm probot-hello npm run lint
+
+after_success:
+  - docker image tag probot-hello:$(git rev-parse HEAD)
