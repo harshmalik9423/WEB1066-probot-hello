@@ -13,4 +13,4 @@ script:
   - docker container run --rm probot-hello npm run lint
 
 after_success:
-  - docker image tag probot-hello:$(git rev-parse HEAD)
+  - docker image tag probot-hello probot-hello:$(git rev-parse HEAD)
